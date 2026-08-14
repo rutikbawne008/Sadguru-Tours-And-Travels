@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rutik Travels</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    header p {
+      margin-top: 6px;
+      color: #d1d5db;
+    }
+
+    .hero {
+      padding: 45px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      background: #16a34a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .services {
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .services h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .booking {
+      background: white;
+      margin: 20px;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .booking h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 12px;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #111827;
+      color: white;
+      border: none;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #111827;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Rutik Travels</h1>
+  <p>Safe • Comfortable • Reliable Travel</p>
+</header>
+
+<section class="hero">
+  <h2>Welcome to Rutik Travels</h2>
+  <p>Book your cab and travel comfortably.</p>
+  <a href="#booking" class="btn">Book Now</a>
+</section>
+
+<section class="services">
+  <h2>Our Services</h2>
+
+  <div class="card">
+    <h3>🚕 Cab Booking</h3>
+    <p>Local and outstation cab booking.</p>
+  </div>
+
+  <div class="card">
+    <h3>🛣️ Outstation Travel</h3>
+    <p>Comfortable long-distance travel.</p>
+  </div>
+
+  <div class="card">
+    <h3>✈️ Airport Pickup & Drop</h3>
+    <p>Reliable airport transportation.</p>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <h2>Book Your Ride</h2>
+
+  <form onsubmit="sendBooking(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <input type="tel" id="phone" placeholder="Mobile Number" required>
+
+    <input type="text" id="pickup" placeholder="Pickup Location" required>
+
+    <input type="text" id="drop" placeholder="Drop Location" required>
+
+    <input type="date" id="date" required>
+
+    <select id="vehicle" required>
+      <option value="">Select Vehicle</option>
+      <option>Hatchback</option>
+      <option>Sedan</option>
+      <option>SUV</option>
+    </select>
+
+    <textarea id="message" placeholder="Additional Message"></textarea>
+
+    <button type="submit">Send Booking</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Rutik Travels. All Rights Reserved.</p>
+</footer>
+
+<script>
+function sendBooking(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const pickup = document.getElementById("pickup").value;
+  const drop = document.getElementById("drop").value;
+  const date = document.getElementById("date").value;
+  const vehicle = document.getElementById("vehicle").value;
+
+  const text =
+    "New Booking%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Pickup: " + pickup + "%0A" +
+    "Drop: " + drop + "%0A" +
+    "Date: " + date + "%0A" +
+    "Vehicle: " + vehicle;
+
+  window.open("https://wa.me/917498566230?text=" + text, "_blank");
+}
+</script>
+
+</body>
+</html>
